@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons start style="order: 1">
+      <button ion-button icon-only color="secondary" menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>
+      <span>Transaction</span>
+    </ion-title>
+    
+    <ion-buttons end>
+      <notification></notification>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let n of transactions">
+    <ion-card-content>
+     <ion-item>
+        <h2>
+          <div><b>Transaction ID:</b>{{n.trxId}}</div>
+          <div><b>Sender id:</b> {{n.senderId}}</div>
+          <div><b>Receiver id:</b> {{n.receiverId}}</div>
+          <div><b>Status:</b> {{n.status}}</div>
+          <div><b>Amount:</b> {{n.amount}}</div>
+          <div><b>Fee:</b> {{n.fee}}</div>
+        </h2>
+        <p>{{n.time}}</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>
